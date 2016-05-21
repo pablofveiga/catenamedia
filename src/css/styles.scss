@@ -1,0 +1,249 @@
+// variables
+$white: #FFF;
+
+$green10: #c8e6c8;
+$green20: #60b761;
+$green30: #a3d6a4;
+$green40: #e7f4e7;
+
+$blue05: #d9eff1;
+$blue10: #36aab5;
+$blue20: #40aeb9;
+
+$grey14: #efefef;
+$grey12: #e5e5e5;
+$grey10: #CCC;
+$grey08: #666;
+$grey06: #333;
+$grey04: #FAFAFA;
+
+$header-background: $green10;
+$header-color: #0093a1;
+
+$footer-background: $blue20;
+$footer-color: $white;
+
+$done-hover-background: $green40;
+$todo-hover-background: $blue05;
+$remove-hover-background: $grey04;
+
+// FONTS
+@font-face {
+    font-family: 'robotolight';
+    src: url('fonts/roboto-light-webfont.woff2') format('woff2'),
+         url('fonts/roboto-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+// ICONS
+.icon-add {
+	background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 0;
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.5em;
+	cursor: pointer;
+}
+
+// STYLES
+
+// -- CONVENTIONS
+* {
+	font-family: 'robotoregular';
+	font-weight: normal;
+}
+.gutter-content {
+	padding: 1.5em;
+}
+
+// -- MAIN PAGE STYLES
+.main-header {
+	background-color: $green10;
+	border-bottom: 6px solid $green20;
+	position: fixed;
+	width: 100%;
+	
+	h1 {
+		color: $header-color;
+		font-size: 32px;
+
+		.logo {
+			background: rgba(0, 0, 0, 0) url("../pics/catenamedia-logo.png") no-repeat scroll 0 0;
+			display: inline-block;
+			width: 48px;
+			height: 47px;
+			vertical-align: middle;
+			padding-right: 12px;
+		}
+	}
+}
+
+.tasks-section {
+	// margin-top: 7em;
+	padding-top: 8em;
+}
+
+.page-subtitle {
+	font-size: 24px;
+}
+
+.task-searcher {
+    padding: 1.5em 0;
+
+    input {
+    	width: 460px;
+    	border: 2px solid $grey10;
+    	border-radius: 2px;
+    	padding: 5px;
+    	vertical-align: middle;
+    }
+    span {}
+}
+
+.task-list {
+	li {
+		display: inline-block;
+		border-bottom: 3px solid transparent;
+		margin-right: 1.5em;
+		padding-bottom: 3px;
+
+		a {
+			color: $grey08;
+		}
+	
+
+	&:hover {
+		border-color: $grey06;
+	}
+
+	}
+}
+
+
+.task-container {	
+	margin: 1.688em 0 6em;
+	box-shadow: 0 0 4px $grey06;
+}
+.task-display {
+	overflow: hidden;
+}
+
+.task-display > li {
+	font-size: 18px;
+	height: 6em;
+
+}
+
+.task-item {
+	display: table;
+	width: 100%;
+	border-top: 1px solid $grey14;
+
+
+	.description {
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: 2.5em;
+	}
+
+	.button-container {
+	    // display: table-cell;
+	    display: none;
+	    vertical-align: middle;
+	    text-align: right;
+	    padding-right: 1.5em;
+
+	    li {
+	    	margin: 0 3px;
+	    }
+	}
+
+	&:hover {
+
+		.button-container {
+
+			display: table-cell;
+		}
+
+	}
+
+	&.done {
+		border-left: 10px solid $green30;
+
+		.icon-done {
+			display: none;
+		}
+		&:hover {
+			background-color: $done-hover-background;
+		}
+	}
+	&.todo {
+		border-left: 10px solid $blue10;
+		&:hover {
+			background-color: $todo-hover-background;
+		}		
+	}
+	&.remove {
+		border-left: 10px solid $grey12;
+		.button-container { 
+			display: none;
+		}
+		&:hover {
+			background-color: $remove-hover-background;
+		}
+	}
+}
+
+.task-display li .description {
+
+}
+
+	.button-container {
+		li {
+			display: inline-block;
+			a {
+				display: block;
+				width: 36px;
+				height: 36px;
+				// background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 0;
+			}
+		}
+	}
+
+
+.task-display li:hover {
+
+}
+
+.button-container a {
+
+}
+.icon-done {
+	background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 -72px;
+}
+.icon-remove {
+	background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 -36px;
+}
+
+
+footer {
+	background-color: $footer-background;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+
+	p {
+		color: $footer-color;
+		font-size: 1.125em;
+
+	}
+}
