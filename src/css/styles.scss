@@ -192,7 +192,7 @@ $remove-hover-background: $grey04;
 			background-color: $todo-hover-background;
 		}		
 	}
-	&.remove {
+	&.removed {
 		border-left: 10px solid $grey12;
 		.button-container { 
 			display: none;

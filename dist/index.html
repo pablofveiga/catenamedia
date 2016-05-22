@@ -7,9 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-
-	<script type="text/javascript" src="js/data.json"></script>
-
+	<script type="text/javascript" src="js/todo.js"></script>
 </head>
 <body>
 
@@ -23,90 +21,20 @@
 	</header>
 
 	<div class="task-searcher">
-		<input type="search" name="searcher" placeholder="Add new task..." maxlength="120">
-		<span class="icon-add"></span>
+		<input type="search" name="searcher" id="newTask" placeholder="Add new task..." maxlength="120">
+		<span class="icon-add" onclick="add()"></span>
 	</div>
 
 	<nav class="task-list">
 		<ul>
-			<li><a href="#">All</a></li>
-			<li><a href="#">To do</a></li>
-			<li><a href="#">Done</a></li>
-			<li><a href="#">Removed</a></li>
+			<li><a id="link-all" href="#" onclick="showFiltered(this)">All</a></li>
+			<li><a id="link-todo" href="#" onclick="showFiltered(this,'todo')">To do</a></li>
+			<li><a id="link-done" href="#" onclick="showFiltered(this, 'done')">Done</a></li>
+			<li><a id="link-removed" href="#" onclick="showFiltered(this, 'removed')">Removed</a></li>
 		</ul>
 	</nav>
 
-	<div class="task-container">
-		<ul class="task-display">
-
-			<li class="todo task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">This is a TODO task and here comes its description</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>
-
-			<li class="done task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">This is a DONE task and here comes its description</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>
-
-			<li class="remove task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">This is a REMOVED task and here comes its description</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>
-
-			<li class="todo task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">This is a TODO task and here comes its description</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>						
-
-			<li class="done task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">Description of the task here</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>
-
-			<li class="remove task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">Description of the task here</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>						
-
-			<li class="todo task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">Description of the task here</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>
-
-			<li class="done task-item">	<!-- LA CLASE CAMBIA A TODO REMOVED o DONE;  -->
-				<span class="description">Description of the task here</span>
-				<ul class="button-container">
-					<li><a href="#" title="Done" class="icon-done"></a></li>
-					<li><a href="#" title="Remove" class="icon-remove"></a></li>
-				</ul>
-			</li>						
-
-
-
-		</ul>
-		
+	<div class="task-container" id="todo-list">
 	</div>
 
 </section>
@@ -114,11 +42,6 @@
 <footer class="gutter-content">
 	<p>2015 Copyright TASKMASTER</p>
 </footer>
-
-
-
-
-
 
 </body>
 </html>
