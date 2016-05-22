@@ -1,31 +1,4 @@
-// variables
-$white: #FFF;
-
-$green10: #c8e6c8;
-$green20: #60b761;
-$green30: #a3d6a4;
-$green40: #e7f4e7;
-
-$blue05: #d9eff1;
-$blue10: #36aab5;
-$blue20: #40aeb9;
-
-$grey14: #efefef;
-$grey12: #e5e5e5;
-$grey10: #CCC;
-$grey08: #666;
-$grey06: #333;
-$grey04: #FAFAFA;
-
-$header-background: $green10;
-$header-color: #0093a1;
-
-$footer-background: $blue20;
-$footer-color: $white;
-
-$done-hover-background: $green40;
-$todo-hover-background: $blue05;
-$remove-hover-background: $grey04;
+@import 'variables';
 
 // FONTS
 @font-face {
@@ -43,18 +16,6 @@ $remove-hover-background: $grey04;
     font-weight: normal;
     font-style: normal;
 }
-// ICONS
-.icon-add {
-	background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 0;
-	width: 36px;
-	height: 36px;
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 0.5em;
-	cursor: pointer;
-}
-
-// STYLES
 
 // -- CONVENTIONS
 * {
@@ -74,7 +35,7 @@ $remove-hover-background: $grey04;
 	
 	h1 {
 		color: $header-color;
-		font-size: 32px;
+		font-size: $font-size-big;
 
 		.logo {
 			background: rgba(0, 0, 0, 0) url("../pics/catenamedia-logo.png") no-repeat scroll 0 0;
@@ -86,16 +47,12 @@ $remove-hover-background: $grey04;
 		}
 	}
 }
-
 .tasks-section {
-	// margin-top: 7em;
 	padding-top: 8em;
 }
-
 .page-subtitle {
-	font-size: 24px;
+	font-size: $font-size-medium;
 }
-
 .task-searcher {
     padding: 1.5em 0;
 
@@ -106,29 +63,22 @@ $remove-hover-background: $grey04;
     	padding: 5px;
     	vertical-align: middle;
     }
-    span {}
 }
-
-.task-list {
-	li {
-		display: inline-block;
-		border-bottom: 3px solid transparent;
-		margin-right: 1.5em;
-		padding-bottom: 3px;
-
-		a {
-			color: $grey08;
-		}
-	
+.task-list li {	
+	display: inline-block;
+	border-bottom: 3px solid transparent;
+	margin-right: 1.5em;
+	padding-bottom: 3px;
 
 	&:hover {
 		border-color: $grey06;
 	}
+	
+	a {
+		color: $grey08;
+	}	
 
-	}
 }
-
-
 .task-container {	
 	margin: 1.688em 0 6em;
 	box-shadow: 0 0 4px $grey06;
@@ -136,18 +86,15 @@ $remove-hover-background: $grey04;
 .task-display {
 	overflow: hidden;
 }
-
 .task-display > li {
-	font-size: 18px;
+	font-size: $font-size-small;
+	line-height: 24px;
 	height: 6em;
-
 }
-
 .task-item {
 	display: table;
 	width: 100%;
 	border-top: 1px solid $grey14;
-
 
 	.description {
 		display: table-cell;
@@ -156,7 +103,6 @@ $remove-hover-background: $grey04;
 	}
 
 	.button-container {
-	    // display: table-cell;
 	    display: none;
 	    vertical-align: middle;
 	    text-align: right;
@@ -168,12 +114,9 @@ $remove-hover-background: $grey04;
 	}
 
 	&:hover {
-
 		.button-container {
-
 			display: table-cell;
 		}
-
 	}
 
 	&.done {
@@ -202,30 +145,25 @@ $remove-hover-background: $grey04;
 		}
 	}
 }
-
-.task-display li .description {
-
-}
-
-	.button-container {
-		li {
-			display: inline-block;
-			a {
-				display: block;
-				width: 36px;
-				height: 36px;
-				// background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 0;
-			}
-		}
+.button-container li {
+	display: inline-block;
+	
+	a {
+		display: block;
+		width: 36px;
+		height: 36px;
 	}
-
-
-.task-display li:hover {
-
 }
 
-.button-container a {
-
+// ICONS
+.icon-add {
+	background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 0;
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 0.5em;
+	cursor: pointer;
 }
 .icon-done {
 	background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 -72px;
@@ -233,7 +171,6 @@ $remove-hover-background: $grey04;
 .icon-remove {
 	background: rgba(0, 0, 0, 0) url("../pics/buttons_sprt.png") no-repeat scroll 0 -36px;
 }
-
 
 footer {
 	background-color: $footer-background;
@@ -243,7 +180,8 @@ footer {
 
 	p {
 		color: $footer-color;
-		font-size: 1.125em;
-
+		font-size: $font-size-small;
 	}
 }
+// MEDIAQUERIES
+@import 'mediaqueries';
